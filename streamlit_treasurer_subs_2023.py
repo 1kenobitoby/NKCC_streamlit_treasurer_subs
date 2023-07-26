@@ -204,15 +204,15 @@ if check_password():
         other_games = next((item.get('Other games') for item in players if item['name'] == playername))
         subs = next((item.get('Subs') for item in players if item['name'] == playername))
     
-for p in players:
-    if p['Subs'] != 0:
-        person = p['name']
-        owes = str(p['Subs'])
-        output_string = '<strong><p style=font-family:courier;color:black;>' + person + ' £' + owes +'</p></strong>'
-        st.markdown(output_string, unsafe_allow_html=True)
-        # st.write(p['name'], ' £', p['Subs'])
-        st.write('   Saturday games ', p['Saturday games'], "; Women's games ", p["Women's games"], '; Other games ', p['Other games'])
-        st.write('')
+    for p in players:
+        if p['Subs'] != 0:
+            person = p['name']
+            owes = str(p['Subs'])
+            output_string = '<strong><p style=font-family:courier;color:black;>' + person + ' £' + owes +'</p></strong>'
+            st.markdown(output_string, unsafe_allow_html=True)
+            # st.write(p['name'], ' £', p['Subs'])
+            st.write('   Saturday games ', p['Saturday games'], "; Women's games ", p["Women's games"], '; Other games ', p['Other games'])
+            st.write('')
    
     
 
